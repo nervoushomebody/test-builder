@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Освітній VR проєкт - PC Builder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; color: white; margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .card { 
+            background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px; overflow: hidden; transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-header { 
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white; padding: 20px; text-align: center;
+        }
+        .card-body { padding: 30px; }
+        .tech-badge { 
+            display: inline-block; background: #e3f2fd; color: #1976d2;
+            padding: 5px 15px; border-radius: 20px; margin: 5px;
+            font-size: 0.9rem;
+        }
+        .btn { 
+            display: inline-block; padding: 15px 30px; background: #667eea;
+            color: white; text-decoration: none; border-radius: 25px;
+            transition: background 0.3s ease; margin: 10px;
+        }
+        .btn:hover { background: #5a67d8; }
+        .btn-secondary { background: #764ba2; }
+        .btn-secondary:hover { background: #6b4c96; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .feature { text-align: center; padding: 20px; }
+        .feature-icon { font-size: 3rem; margin-bottom: 15px; }
+        .author-info { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px; }
+        .ml-notice { 
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white; padding: 15px; border-radius: 10px; margin: 20px 0;
+            text-align: center; font-weight: bold;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .component-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .component-card h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🖥️ PC Builder VR</h1>
+            <p>Інтерактивне вивчення апаратного забезпечення комп'ютера за допомогою віртуальної реальності</p>
+        </div>
+
+        <!-- Project Info Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📊 Інформація про проєкт</h2>
+            </div>
+            <div class="card-body">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Мета проєкту</h3>
+                        <p>Навчити учнів принципам архітектури комп'ютера через імерсивний VR досвід</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <h3>Цільова аудиторія</h3>
+                        <p>Учні 10-11 класів, які вивчають інформатику та основи комп'ютерної техніки</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🥽</div>
+                        <h3>Платформа</h3>
+                        <p>VR гарнітури та десктоп браузери з підтримкою WebXR</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <span class="tech-badge">A-Frame</span>
+                    <span class="tech-badge">WebXR</span>
+                    <span class="tech-badge">Three.js</span>
+                    <span class="tech-badge">WebGL</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>🚀 Демонстрація</h2>
+            </div>
+            <div class="card-body" style="text-align: center;">
+                <p>Натисніть кнопку нижче, щоб запустити інтерактивний VR досвід збирання ПК:</p>
+                <a href="https://nervoushomebody.github.io/pc-builder/" class="btn">🥽 Запустити демо</a>
+            </div>
+        </div>
+
+        <!-- PC Components Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>💻 Компоненти ПК для вивчення</h2>
+            </div>
+            <div class="card-body">
+                <div class="component-grid">
+                    <div class="component-card">
+                        <h4>Материнська плата</h4>
+                        <p>Основа системи, що з'єднує всі компоненти</p>
+                    </div>
+                    <div class="component-card">
+                        <h4>Процесор (CPU)</h4>
+                        <p>Мозок комп'ютера для обчислень</p>
+                    </div>
+                    <div class="component-card">
+                        <h4>Оперативна пам'ять (RAM)</h4>
+                        <p>Швидка тимчасова пам'ять</p>
+                    </div>
+                    <div class="component-card">
+                        <h4>Відеокарта (GPU)</h4>
+                        <p>Обробка графіки та відео</p>
+                    </div>
+                    <div class="component-card">
+                        <h4>Блок живлення (PSU)</h4>
+                        <p>Забезпечує електроенергією всі компоненти</p>
+                    </div>
+                    <div class="component-card">
+                        <h4>SSD накопичувач</h4>
+                        <p>Швидке сховище даних</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>✨ Функціональність</h2>
+            </div>
+            <div class="card-body">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🎮</div>
+                        <h3>VR Інтерактивність</h3>
+                        <p>Фізична взаємодія з компонентами через VR контролери, хапання та переміщення об'єктів</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧲</div>
+                        <h3>Магнітне притягання</h3>
+                        <p>Спеціальна система для легшого захоплення компонентів на відстані</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💡</div>
+                        <h3>Навчальні підказки</h3>
+                        <p>Детальні описи кожного компонента з'являються при взаємодії</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Details Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>⚙️ Технічні деталі</h2>
+            </div>
+            <div class="card-body">
+                <h3>Системні вимоги:</h3>
+                <ul style="margin: 15px 0; padding-left: 30px;">
+                    <li>VR гарнітура (Oculus Rift, HTC Vive, Quest) або сучасний браузер</li>
+                    <li>Підтримка WebGL та WebXR</li>
+                    <li>Сучасний браузер (Chrome, Firefox, Edge)</li>
+                    <li>Мінімум 4GB RAM для комфортної роботи</li>
+                </ul>
+                
+                <h3>Використані технології:</h3>
+                <div id="tech-list">
+                    <span class="tech-badge">A-Frame 1.4.0</span>
+                    <span class="tech-badge">Super-Hands</span>
+                    <span class="tech-badge">Physics System</span>
+                    <span class="tech-badge">Hand Controls</span>
+                    <span class="tech-badge">Teleport Controls</span>
+                    <span class="tech-badge">GLTF Models</span>
+                </div>
+
+                <h3 style="margin-top: 20px;">Навчальні цілі:</h3>
+                <ul style="margin: 15px 0; padding-left: 30px;">
+                    <li>Розуміння архітектури комп'ютера</li>
+                    <li>Практичні навички збирання ПК</li>
+                    <li>Ідентифікація компонентів та їх функцій</li>
+                    <li>Безпечна практика без ризику пошкодження обладнання</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Controls Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>🎮 Керування</h2>
+            </div>
+            <div class="card-body">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🥽</div>
+                        <h3>VR режим</h3>
+                        <p><strong>Хапання:</strong> Тригер на контролері<br>
+                        <strong>Переміщення:</strong> Лівий стік<br>
+                        <strong>Телепорт:</strong> Лазерний вказівник<br>
+                        <strong>Притягання:</strong> Тригер на вільну руку</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🖥️</div>
+                        <h3>Desktop режим</h3>
+                        <p><strong>Рух:</strong> WASD клавіші<br>
+                        <strong>Огляд:</strong> Рух миші<br>
+                        <strong>Взаємодія:</strong> Лівий клік<br>
+                        <strong>Політ:</strong> Клавіша пробіл</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Card -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📚 Документація</h2>
+            </div>
+            <div class="card-body" style="text-align: center;">
+                <a href="https://github.com/nervoushomebody/pc-builder" class="btn">📚 Документація</a>
+            </div>
+        </div>
+
+        <!-- Author Info -->
+        <div class="author-info">
+            <h3>👨‍🎓 Автор проєкту</h3>
+            <p><strong>Ім'я:</strong> [ПІБ студента]</p>
+            <p><strong>Група:</strong> [Назва групи]</p>
+            <p><strong>Спеціальність:</strong> Інформатика / Комп'ютерні науки</p>
+            <p><strong>Викладач:</strong> [ПІБ викладача]</p>
+            <p><strong>Дисципліна:</strong> Інноваційні цифрові технології в освіті</p>
+            <p><strong>Рік:</strong> 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Налаштування проєкту
+        const projectType = 'VR';
+        const isCSStudent = 'true';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setupProjectInterface(projectType, isCSStudent === 'true');
+        });
+        
+        function setupProjectInterface(type, includeML) {
+            // Проєкт вже налаштований для VR
+            console.log('PC Builder VR проєкт ініціалізовано');
+            
+            // Додаткові налаштування можна додати тут
+            if (includeML) {
+                // Якщо потрібно додати ML функціональність
+                console.log('ML функціональність доступна для розширення');
+            }
+        }
+
+        // Анімація при завантаженні
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
